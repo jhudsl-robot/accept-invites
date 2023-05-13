@@ -13,7 +13,7 @@ jobs:
     name: Accept Invites
     runs-on: ubuntu-latest
     container:
-      image: rocker/tidyverse:4.0.2
+      image: r-base
 
     steps:
 
