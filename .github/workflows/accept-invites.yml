@@ -3,6 +3,7 @@
 name: Accept invites
 
 on:
+  workflow_dispatch:
   issues:
     types: [opened]
 
