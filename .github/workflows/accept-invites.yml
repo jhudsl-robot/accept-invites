@@ -1,0 +1,21 @@
+# Candace Savonen May 2023
+
+name: Accept invites
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+
+  accept-invites:
+    name: Accept Invites
+    runs-on: ubuntu-latest
+    container:
+      image: rocker/tidyverse:4.0.2
+
+  - name: Install githelpers
+    run: Rscript -e "devtools::install_github('fhdasl/githubhelpers')"
+
+  - name: Run the thing
+    run: Rscript "accept_all_invites(git_pat = ${{secrets.GH_PAT}})"
