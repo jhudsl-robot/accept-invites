@@ -16,9 +16,9 @@ jobs:
       image: rocker/tidyverse
 
     steps:
-      
+
     - name: Install githelpers
-      run: Rscript -e "Sys.setenv(GITHUB_PAT = '${{secrets.GH_PAT}}'); devtools::install_github('fhdasl/githubhelpers')"
+      run: Rscript -e "Sys.setenv(GITHUB_PAT = '${{secrets.GH_PAT}}'); devtools::install_github('fhdsl/githubhelpers')"
 
     - name: Run the thing
       run: Rscript "accept_all_invites(git_pat = '${{secrets.GH_PAT}}')"
