@@ -13,12 +13,9 @@ jobs:
     name: Accept Invites
     runs-on: ubuntu-latest
     container:
-      image: r-base
+      image: rocker/tidyverse
 
     steps:
-    
-    - name: Install devtools
-      run: Rscript -e "install.packages('devtools')"
       
     - name: Install githelpers
       run: Rscript -e "Sys.setenv(GITHUB_PAT = '${{secrets.GH_PAT}}'); devtools::install_github('fhdasl/githubhelpers')"
